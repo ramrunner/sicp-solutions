@@ -1,0 +1,11 @@
+										(((((((((((SICP SOLUTIONS BY dsp@2f30.org)))))))))))
+
+some solutions are in their own files , others more extended exercises are packed together.
+format is ex{Chapter}-{Number}|{Starting Number -- Ending Number}
+
+most of them provide test__ functions that show the usage.
+
+Extended exercises (like the picture language) are in their own directories.
+
+cheers.
+DsP
