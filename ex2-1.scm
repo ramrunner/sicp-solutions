@@ -6,20 +6,26 @@
 ;;be done in the selectors numer and denom , if needed.
 ;;we also create accessors and a sample print for testing
 ;;<dsp@2f30.org>
-(define make-rat (lambda (x y)
-	(let ((g (gcd x y)))
-	  (cond ((or  (and (< x 0) (< y 0)) (and (> x 0) (> y 0))) (cons (abs (/ x g)) (abs (/ y g))))
-	  			((< y 0) (cons (- (/ x g)) (abs (/ y g))))
-		 		  (else (cons (/ x g) (/ y g)))))))
+(define make-rat 
+  (lambda (x y)
+    (let ((g (gcd x y)))
+      (cond ((or  (and (< x 0) (< y 0)) (and (> x 0) (> y 0))) 
+             (cons (abs (/ x g)) (abs (/ y g))))
+            ((< y 0) 
+             (cons (- (/ x g)) (abs (/ y g))))
+            (else (cons (/ x g) (/ y g)))))))
 
-(define numer (lambda (x)
-	(car x)))
+(define numer 
+  (lambda (x)
+    (car x)))
 
-(define denom (lambda (x)
-	(cdr x)))
+(define denom 
+  (lambda (x)
+    (cdr x)))
 
-(define print-rat (lambda (x)
-	(display (numer x))
-	(display "/")
-	(display (denom x))
-	(newline)))
+(define print-rat 
+  (lambda (x)
+    (display (numer x))
+    (display "/")
+    (display (denom x))
+    (newline)))

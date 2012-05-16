@@ -6,32 +6,40 @@
 ;;notice that the accessors for pairs are the same.
 ;;<dsp@2f30.org>
 
-(define make-point (lambda (x y)
-  (cons x y)))
+(define make-point 
+  (lambda (x y)
+    (cons x y)))
 
-(define x-point (lambda (x)
-  (car x)))
+(define x-point 
+  (lambda (x)
+    (car x)))
 
-(define y-point (lambda (x)
-  (cdr x)))
+(define y-point 
+  (lambda (x)
+    (cdr x)))
 
-(define print-point (lambda (x)
-  (display "(")
-	(display (x-point x))
-	(display ",")
-	(display (y-point x))
-	(display ")")
-	(newline)))
+(define print-point 
+  (lambda (x)
+    (display "(")
+    (display (x-point x))
+    (display ",")
+    (display (y-point x))
+    (display ")")
+    (newline)))
 
-(define make-segment (lambda (x y)
-  (cons x y)))
+(define make-segment 
+  (lambda (x y)
+    (cons x y)))
 
-(define start-segment (lambda (x)
-  (car x)))
+(define start-segment 
+  (lambda (x)
+    (car x)))
 
-(define end-segment (lambda (x)
-  (cdr x)))
+(define end-segment 
+  (lambda (x)
+    (cdr x)))
 
-(define midpoint-segment (lambda (x)
-  (make-point (/ (- (x-point (end-segment x)) (x-point (start-segment x))) 2)
-							(/ (- (y-point (end-segment x)) (y-point (start-segment x))) 2))))
+(define midpoint-segment 
+  (lambda (x)
+    (make-point (/ (- (x-point (end-segment x)) (x-point (start-segment x))) 2)
+		(/ (- (y-point (end-segment x)) (y-point (start-segment x))) 2))))

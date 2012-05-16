@@ -4,8 +4,8 @@
 ;;<dsp@2f30.org>
 
 (define (reverse l)
-	(letrec ((r (lambda (a b)
-								(if (eq? a '())
-									b
-									(r (cdr a) (cons (car a) b))))))
-		(r l '())))
+  (letrec ((r (lambda (a b)
+		(if (eq? a '())
+		  b
+		  (r (cdr a) (cons (car a) b))))))
+    (r l '())))

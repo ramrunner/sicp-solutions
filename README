@@ -1,4 +1,4 @@
-										(((((((((((SICP SOLUTIONS BY dsp@2f30.org)))))))))))
+	(((((((((((SICP SOLUTIONS BY dsp@2f30.org)))))))))))
 
 some solutions are in their own files , others more extended exercises are packed together.
 format is ex{Chapter}-{Number}|{Starting Number -- Ending Number}
@@ -9,3 +9,6 @@ Extended exercises (like the picture language) are in their own directories.
 
 cheers.
 DsP
+
+CHANGELOG:
+  16/05/12: fixed identation 

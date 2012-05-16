@@ -5,10 +5,12 @@
 ;;<dsp@2f30.org>
 
 (define for-each1 
-	(lambda (p l)
-		(if (not (null? l))
-			(begin 
-				(p (car l))
-				(for-each1 p (cdr l))))))
+  (lambda (p l)
+    (if (not (null? l))
+      (begin 
+	(p (car l))
+	(for-each1 p (cdr l))))))
 
-(for-each1 (lambda (x) (display x) (newline)) (list 1 2 52 42))
+(for-each1 
+  (lambda (x) 
+    (display x) (newline)) (list 1 2 52 42))
