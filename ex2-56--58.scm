@@ -13,6 +13,12 @@
                          (deriv (multiplicand exp) var))
            (make-product (deriv (multiplier exp) var)
                          (multiplicand exp))))
+	((exponentation? exp)
+         (let ((innerdev (deriv (base exp) var)))
+           (make-product
+             (make-product (exponent exp) 
+                           (make-exponentation (base exp) (- (exponent exp) 1)))
+             innerdev)))
         (else
          (error "unknown expression type -- DERIV" exp))))
 
@@ -57,3 +63,11 @@
   (cond ((= e2 0) 1)
         ((= e2 1) e1)
         (else (list '** e1 e2))))
+
+;; these functions are useful if we don't want to calculate the deriv
+;; but instead treat it symbolically
+(define (derivative? x)
+  (and (eq? (length x) 3) (eq? (car x) 'd)))
+
+(define (make-derivative exp var)
+  (list 'd exp var))
